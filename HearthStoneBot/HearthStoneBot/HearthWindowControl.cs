@@ -14,7 +14,6 @@ namespace HearthStoneCs
         {
             hearthWindowHandle = getProcessesHandle();
             handleNullWindow();
-            SetForegroundWindow(hearthWindowHandle);
         }
         //Properly gets Handle, Private because we only deal with window handles within this class
         private IntPtr getProcessesHandle()
@@ -25,9 +24,9 @@ namespace HearthStoneCs
             return windowHandle;
         }
         //Scale the window to a fixed size in order to have same window for each
-        private void setWindowToFront()
+        private void setWindowToFrontandSize()
         {
-
+            SetForegroundWindow(hearthWindowHandle);
         }
         //Used to make sure window is open, will throw a popup and wait for user to open Hearthstone then they click Ok
         private void handleNullWindow()
